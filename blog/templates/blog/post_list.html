@@ -4,22 +4,16 @@
     </head>
     <body>
         <div>
-            <h1><a href="http://djangogirls.com">Django girls blog</a></h1>
+            <h1><a href="/">Django girls blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 15.06.2016, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris bibendum cursus placerat. Nulla venenatis vehicula ornare. Curabitur in consectetur enim. Integer id justo quam. Vivamus efficitur eros velit, vitae interdum nisl facilisis molestie. Vestibulum vitae justo pellentesque, bibendum magna sed, semper elit. Nulla auctor tortor ultricies ornare consequat. In nibh ipsum, feugiat non iaculis vitae, semper ac velit. Aenean non augue a tortor consequat posuere. Nulla neque lacus, rhoncus vitae tincidunt sed, placerat a lectus. In consectetur facilisis ultricies. Vivamus justo diam, commodo at iaculis quis, lobortis et turpis. Donec vulputate dolor dolor, ut porta odio dictum ac.
-            </p>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaks }}</p>
         </div>
-
-        <div>
-             <p>Published: 4.12. 2016, 12:12</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Nulla id risus finibus, elementum est et, tempus sapien. Donec dictum ante elit, id egestas velit varius in. Vestibulum venenatis risus justo, nec mollis urna pulvinar sed. Suspendisse molestie congue ex, vitae convallis felis. Fusce ut nulla turpis. Maecenas pellentesque sem ac arcu imperdiet congue. Vivamus eleifend, leo et hendrerit cursus, magna ligula gravida arcu, eu venenatis augue dolor vel ante. Morbi varius volutpat risus, nec suscipit ante.
-            </p>
-        </div>
+        {% endfor %}
  
     </body>
 </htmk>
